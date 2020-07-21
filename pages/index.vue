@@ -1,78 +1,45 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        tripjob
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <main>
+    <div class="banner">
+      <div class="container mx-auto">
+        <div class="flex items-center flex-wrap">
+          <div class="md:w-1/2 w-full">
+            <h1 class="text-5xl"></h1>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <button class="bg-secundary" @click="fn">
+      teste
+    </button>
+
+    <div class="produtos" v-if="value">
+      <div class="container mx-auto">
+        <ul class="flex flex-wrap">
+          <li v-for="(item, index) in 8" :key="index">
+            <h2>teste</h2>
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQNDheRTiCdtRy0WiLOVW_5JzvP1Hy0N8V5mLnmyrkMOoJFGG9XVzW-DTY_cUAk1UVEUjQJ2wYbs4YmZ2nnl0gkf0uSvg_FLyQtE5TOWXoN&usqp=CAE" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    value: true
+  }),
+  methods: {
+    fn () {
+      this.value = !this.value;
+    }
+  }
+}
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

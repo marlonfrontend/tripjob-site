@@ -1,10 +1,21 @@
 <template>
   <div>
+    <app-header />
     <Nuxt />
+    <app-footer />
   </div>
 </template>
-
-<style>
+<script>
+import AppHeader from '@/components/AppHeader';
+import AppFooter from '@/components/AppFooter';
+export default {
+  components: {
+    AppHeader,
+    AppFooter
+  }
+}
+</script>
+<style lang="scss">
 html {
   font-family:
     'Source Sans Pro',
@@ -29,6 +40,7 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+  outline: none !important;
 }
 
 .button--green {
