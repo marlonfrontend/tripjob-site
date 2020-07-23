@@ -18,11 +18,19 @@ export default {
 </script>
 
 <style lang="scss">
-.allcontain {
-  background-image: url(~assets/img/banner.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 25%;
+.banner {
+  background-color: #0e1638;
   height: 75vh;
+  position: relative;
+  &::before {
+    content: "";
+    background: url(~assets/img/banner.jpg) no-repeat center;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 </style>
